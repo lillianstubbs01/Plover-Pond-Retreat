@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;300;400;500;600;900&display=swap');
 
-.root {
+:root {
   /* font variables */
   --font: 'Urbanist', sans-serif;
   --thin: 100;
@@ -8,22 +8,26 @@
   --regular: 400;
   --medium: 500;
   --semibold: 600;
-  --bold: 900;
+  --weight-black: 900;
 
   /* color variables */
   --brown: #261813;
   --burnt-umber: #8C310F;
+  --dark-red: #400A05;
   --med-gray: #BFBFBF;
   --dark-gray: #5E5E5E;
+  --beige: #EDE8E6;
 
   /* font size vars */
+  --title: 5.6rem;
+  --subtitle: 3rem;
   --title-one: 128px;
   --title-two: 80px;
   --body-one: 30px;
-  --body-two: 24px;
+  --body-two: 1.5rem;
   --button: 30px;
   --header-one: 64px;
-  --header-two: 48px;
+  --header-two: 3rem;
   --input: 20px;
 }
 
