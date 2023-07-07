@@ -1,17 +1,18 @@
 import React from 'react'
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
-import Home from './Components/Home/Home.js';
+import HomeImage from './Components/HomeImage/HomeImage.js';
+import DetailsPage from "./Components/Details/DetailsPage";
 
 function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/details" element={<Home/>}/>
-                <Route path="/availabilities" element={<Home/>}/>
-                <Route path="/photo-gallery" element={<Home/>}/>
-                <Route path="*" element={<Home/>}/>
+                <Route path="/" element={<HomeImage/>}/>
+                <Route path="/details" element={<DetailsPage/>}/>
+                <Route path="/availabilities" element={<HomeImage/>}/>
+                <Route path="/photo-gallery" element={<HomeImage/>}/>
+                <Route path="*" element={<HomeImage/>}/>
             </Routes>
         </BrowserRouter>
     );

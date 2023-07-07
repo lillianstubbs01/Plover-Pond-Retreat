@@ -1,0 +1,83 @@
+
+
+.home-image {
+    display: grid;
+    grid-row-gap: 2%;
+
+    height: 57.6rem;
+    min-height: 30rem;
+    background-color: #EDE8E6;
+
+}
+
+.home-image-overlay {
+    background-color: rgba(38, 24, 19, 0.67);
+    grid-row: 1/16;
+    grid-column: 1/12;
+    z-index: 1;
+}
+
+.home-image-img {
+    background-image: url("./../../Images/master_bedroom_narrow.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #EDE8E6;
+    grid-row: 1/16;
+    grid-column: 1/12;
+
+}
+
+.home-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+
+    grid-row: 16/24;
+    grid-column: 1/12;
+
+    background-color: #EDE8E6;
+}
+
+.home-footer-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    width: 25rem;
+
+    font-family: 'Urbanist', sans-serif;
+    color: #261813;
+}
+
+.home-footer-header {
+    font-weight: 500;
+    font-size: 1.75rem;
+}
+
+.home-footer-body {
+    font-weight: 300;
+    font-size: 1.25rem;
+}
+
+.home-image-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    grid-row: 15/17;
+    grid-column: 6/7;
+    z-index: 2;
+    line-height: 100%;
+    padding: 0;
+
+    background-color: #8C310F;
+    color: white;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 300;
+    font-size: 5rem;
+
+}
+

@@ -1,8 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import { Home48Regular } from "@fluentui/react-icons";
 import NavBar from "../NavBar/NavBar";
-
 import './Home.css'
 
 function Home() {
@@ -19,6 +18,7 @@ function Home() {
                 <Link to="/contact" style={{textDecoration: 'none'}}>
                     <button className="home-secondary-btn">Contact Now</button>
                 </Link>
+                <Home48Regular></Home48Regular>
             </div>
         </div>
     );
