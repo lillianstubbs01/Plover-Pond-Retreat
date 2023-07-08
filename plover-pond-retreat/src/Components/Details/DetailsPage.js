@@ -1,10 +1,12 @@
 import React from 'react';
-import DetailsCard from './DetailsCard/DetailsCard.js';
+import NavBar from "../NavBar/NavBar";
+import PropertyDetails from "./PropertyDetails/PropertyDetails";
 
 function DetailsPage() {
     return(
         <div>
-            <DetailsCard detailsHeader="Property Details" detailsBody="" />
+            <NavBar></NavBar>
+            <PropertyDetails></PropertyDetails>
         </div>
     );
 }
