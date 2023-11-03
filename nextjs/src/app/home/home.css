@@ -69,66 +69,102 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 40%;
+    height: 33%;
 
     background-color: var(--beige);
 }
 
-.home2-footer-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: auto;
-    gap: 1rem;
-}
-
-.home2-footer-header {
-    font-family: var(--font);
-    font-weight: var(--weight-black);
-    font-size: var(--header-two);
-    letter-spacing: 0.39rem;
-    color: var(--brown);
-}
-
-.home2-footer-content {
+.home-footer-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 8rem;
-    width: 62rem;
+    align-items: center;
+
+    width: 67%;
     height: auto;
 }
 
-.home2-body {
-    font-family: var(--font);
-    font-weight: var(--regular);
-    font-size: var(--body-two);
-    color: var(--brown);
-    width: 45rem;
+.home-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 64%;
+    height: auto;
 }
 
-.home2-primary-btn {
+.home-summary-title {
+    font-family: var(--font);
+    color: var(--brown);
+    font-weight: var(--weight-black);
+    font-size: var(--title-two);
+    letter-spacing: 0.39rem;
+
+    margin-bottom: 0.5rem;
+}
+
+.home-summary-body {
+    font-family: var(--font);
+    color: var(--brown);
+    font-weight: var(--regular);
+    font-size: var(--body);
+}
+
+.home-primary-btn {
+    width: 12rem;
+    height: 4rem;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    height: 5rem;
-    width: 15rem;
-
     background-color: var(--brown);
-    color: white;
-    font-family: var(--font);
-    font-weight: var(--semibold);
-    font-size: var(--body-two);
 
-    text-decoration: none !important;
+    font-family: var(--font);
+    font-size: var(--body);
+    font-weight: var(--semibold);
+    text-align: center;
+    color: white;
+    text-decoration: none;
 }
 
-.home2-primary-btn:hover {
+.home-primary-btn:hover {
     background-color: var(--burnt-umber);
 }
 
-.home2-primary-btn:active {
-    background-color: var(--dark-red);
+@media screen and (max-width: 728px) {
+    .home-image {
+        display: grid;
+        grid-row: 1/7;
+        grid-column: 1/4;
+
+        width: 100%;
+        height: 45%;
+    }
+    .home-title {
+        font-size: var(--tablet-title);
+    }
+
+    .home-subtitle {
+        font-size: var(--tablet-subtitle);
+    }
+
+    .home-footer {
+        height: auto;
+        min-height: 46%;
+        padding: 2rem;
+
+        justify-content: flex-start;
+    }
+
+    .home-footer-container {
+
+    }
+
+    .home-summary-title {
+        font-size: var(--tablet-title-two);
+    }
+
+    .home-summary-body {
+        font-size: var(--tablet-body);
+    }
 }

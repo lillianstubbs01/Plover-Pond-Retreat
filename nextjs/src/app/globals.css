@@ -26,14 +26,17 @@
   /* font size vars */
   --title: 5.6rem;
   --subtitle: 3rem;
-  --title-one: 128px;
-  --title-two: 80px;
-  --body-one: 30px;
-  --body-two: 1.5rem;
+  --title-two: 2rem;
+  --body: 1.25rem;
   --button: 30px;
   --header-one: 64px;
   --header-two: 3rem;
   --input: 20px;
+
+  --tablet-title: 3rem;
+  --tablet-subtitle: 2rem;
+  --tablet-title-two: 2rem;
+  --tablet-body: 1rem;
 }
 
 body {
