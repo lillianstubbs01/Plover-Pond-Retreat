@@ -17,7 +17,7 @@ function NavBar() {
 
     const handleNavChange = (change) => {
         setNavOpen(change);
-    }
+    } 
 
     return (
         <div className='navbar' onMouseLeave={() => {handleNavChange(false)}}>
