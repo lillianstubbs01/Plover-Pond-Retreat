@@ -1,0 +1,80 @@
+/*Content Sizes*/
+.smaller-content {
+    width: 32%;
+    height: 100%;
+}
+
+.larger-content {
+    width: 60%;
+    height: 100%;
+}
+
+/*Property Details*/
+.property-details-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.icon-row {
+    width: fit-content;
+    height: fit-content;
+    gap: 1.5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon-row p {
+    font-family: var(--font);
+    font-weight: var(--regular);
+    font-size: var(--body);
+    color: var(--brown);
+}
+
+.property-details-description p {
+    font-family: var(--font);
+    font-weight: var(--regular);
+    font-size: var(--body);
+    color: var(--brown);
+}
+
+.details-text p{
+    font-family: var(--font);
+    font-weight: var(--regular);
+    font-size: var(--body);
+    color: var(--brown);
+}
+
+.details-text p b {
+    color: var(--burnt-umber);
+}
+
+.arrow-btn {
+    width: fit-content;
+    height: fit-content;
+    gap: 0.3rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.arrow-btn div{
+    font-family: var(--font);
+    font-weight: var(--semibold);
+    font-size: var(--button);
+    color: var(--brown);
+}
+
+.arrow-btn *:hover {
+    color: var(--burnt-umber);
+}
+
+.link-decoration {
+    text-decoration: none;
+}
