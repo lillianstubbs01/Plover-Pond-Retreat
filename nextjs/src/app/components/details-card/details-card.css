@@ -1,17 +1,27 @@
 .card-background {
-
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .white-background {
-
+    background-color: white;
 }
 
 .brown-background {
-
+    background-color: var(--beige);
 }
 
 .card-content {
+    height:
 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .sub-content {

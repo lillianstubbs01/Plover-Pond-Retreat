@@ -71,8 +71,8 @@
     color: var(--brown);
 }
 
-.arrow-btn *:hover {
-    color: var(--burnt-umber);
+.arrow-btn:hover > * {
+    color: var(--burnt-umber) !important;
 }
 
 .link-decoration {

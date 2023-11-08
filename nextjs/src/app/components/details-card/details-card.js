@@ -1,4 +1,5 @@
 import React from 'react';
+import './details-card.css';
 
 function DetailsCard(props) {
     return (

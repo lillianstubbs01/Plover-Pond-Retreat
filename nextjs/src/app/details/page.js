@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useState} from 'react';
 import NavBar from '../components/navbar/navbar';
 import DetailsCard from '../components/details-card/details-card';
 import Link from 'next/Link';
