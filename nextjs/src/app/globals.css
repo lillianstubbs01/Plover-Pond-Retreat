@@ -28,7 +28,7 @@
   --subtitle: 3rem;
   --title-two: 2rem;
   --body: 1.25rem;
-  --button: 30px;
+  --button: 1.8rem;
   --header-one: 64px;
   --header-two: 3rem;
   --input: 20px;
@@ -37,6 +37,7 @@
   --tablet-subtitle: 2rem;
   --tablet-title-two: 2rem;
   --tablet-body: 1rem;
+  --tablet-button: 1.5rem;
 }
 
 body {

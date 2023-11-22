@@ -7,6 +7,7 @@
 .larger-content {
     width: 60%;
     height: 100%;
+    position: relative;
 }
 
 /*Property Details*/
@@ -42,7 +43,7 @@
     color: var(--brown);
 }
 
-.details-text p{
+.details-text p {
     font-family: var(--font);
     font-weight: var(--regular);
     font-size: var(--body);
@@ -78,3 +79,32 @@
 .link-decoration {
     text-decoration: none;
 }
+
+@media screen and (max-width: 728px) {
+    .icon-row p {
+        font-size: var(--tablet-body)
+    }
+
+    .property-details-description p {
+        font-size: var(--tablet-body);
+    }
+
+    .details-text p {
+        font-size: var(--tablet-body);
+    }
+
+    .arrow-btn div {
+        font-size: var(--tablet-button);
+    }
+
+    .larger-content {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .smaller-content {
+        width: 100%;
+        height: fit-content;
+    }
+}
+

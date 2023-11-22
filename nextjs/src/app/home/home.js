@@ -9,7 +9,7 @@ function HomePage() {
             <NavBar></NavBar>
             <div className='home-image'>
                 <div className='home-title'>Plover Pond Retreat</div>
-                <div className='home-subtitle'>"A home away from home"</div>
+                <div className='home-subtitle'>&quot;A home away from home&quot;</div>
                 <div className='home-overlay'></div>
             </div>
             <div className='home-divider' />

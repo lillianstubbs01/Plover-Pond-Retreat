@@ -6,7 +6,8 @@ import DetailsCard from '../components/details-card/details-card';
 import Link from 'next/Link';
 import Image from 'next/Image';
 import { HomeRegular, BedRegular, VehicleCarRegular, OvenRegular, CalendarRegular, ArrowRightRegular } from '@fluentui/react-icons';
-import walkWayImgSrc from '../assets/fence_walk_way.webp';
+import walkWayWebpSrc from '../assets/fence_walk_way.webp';
+import birdsEyeSrc from '../assets/birds_eye.webp';
 
 import "./details.css"
 
@@ -40,6 +41,7 @@ function Details() {
         <p>Additional features include a 3 car garage plus 2 car detached garage with shop as well as an upstairs man cave above the detached garage - perfect for weekend getaways without ever leaving home! And that's not all - this property also boasts 500 feet of creek along its property line making it ideal for those who love spending time outdoors or even a mini horse farm! Live life on the water in beautiful surroundings - don't miss out on this rare opportunity - schedule a showing today!</p>
     </div>
 
+
     // Constants for Location Card
     const api_key = "AIzaSyALgvI2svq7rRtxR-1yMkHxTTHn4eObOaM";
     const map_mode = "place";
@@ -58,14 +60,25 @@ function Details() {
         allowFullScreen>
     </iframe>;
 
+
     // Constants for Floor Plan Card
-    const floorPlan = <div>Insert Floor Plan</div>
-    const floorPlanDescription = <p>Floor Plan Description:  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper gravida ex, lacinia cursus sapien feugiat ac. Pellentesque eu ligula risus. Praesent in quam erat. Maecenas pharetra leo eget euismod pretium. In hac habitasse platea dictumst.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper gravida ex, lacinia cursus sapien feugiat ac. Pellentesque eu ligula risus. Praesent in quam erat. Maecenas pharetra leo eget euismod pretium. In hac habitasse platea dictumst.
-    </p>;
+    const floorPlan = <div className='larger-content'>
+        <Image src={birdsEyeSrc}
+               alt="The Image Plover Pond Retreat's large exterior with the affiliated farm land"
+               sizes="100vw"
+               fill={true}
+               object-fit='contain'
+        />
+    </div>;
+    const floorPlanDescription = <div className='details-text smaller-content'>
+        <p>Floor Plan Description:  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper gravida ex, lacinia cursus sapien feugiat ac. Pellentesque eu ligula risus. Praesent in quam erat. Maecenas pharetra leo eget euismod pretium. In hac habitasse platea dictumst.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper gravida ex, lacinia cursus sapien feugiat ac. Pellentesque eu ligula risus. Praesent in quam erat. Maecenas pharetra leo eget euismod pretium. In hac habitasse platea dictumst.
+        </p>
+    </div>;
+
 
     // Constants for Jump Start Your Vacation Card
-    const redirectButtons = <div className='right-content details-text'>
+    const redirectButtons = <div className='smaller-content details-text'>
         <p>To see our pricing check our availabilities. </p>
         <Link href='/availabilities' className='link-decoration'>
             <div className='icon-row arrow-btn'>
@@ -89,11 +102,12 @@ function Details() {
         </Link>
     </div>;
     const vacationPhoto = <div className='larger-content'>
-        <Image src={walkWayImgSrc}
+        <Image src={walkWayWebpSrc}
                alt="A view of the home from the drive up to the house. You can see the fence leading up to the house,
-               the detached garage, and the pond with a fountain bursting out."
-               layout='fill'
-               objectFit='contain'
+           the detached garage, and the pond with a fountain bursting out."
+               sizes="100vw"
+               fill={true}
+               object-fit='contain'
         />
     </div>;
 
