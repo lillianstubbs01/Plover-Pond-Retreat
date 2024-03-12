@@ -64,6 +64,7 @@ span {
 .contact-card {
     width: 60%;
     height: 70%;
+    min-height: 450px;
     background-color: white;
 
     display: flex;
@@ -106,4 +107,82 @@ textarea {
 textarea:focus {
     border: 0.15rem solid var(--burnt-umber) !important;
     outline: none;
+}
+
+.clear-btn {
+    height: 3rem;
+    width: 7rem;
+    background-color: white;
+    border: none;
+    font-family: var(--font);
+    font-weight: var(--semibold);
+    font-size: var(--body);
+    color: var(--brown);
+}
+
+.clear-btn:hover {
+    color: var(--burnt-umber);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.submit-btn {
+    height: 3rem;
+    width: 7rem;
+    background-color: var(--brown);
+    border: none;
+    font-family: var(--font);
+    font-weight: var(--semibold);
+    font-size: var(--body);
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: var(--burnt-umber);
+    cursor: pointer;
+}
+
+.btn-row {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media screen and (max-height: 950px) {
+
+    input {
+        height: 2.5rem;
+    }
+    textarea {
+        height: 3rem;
+    }
+    p {
+        font-size: var(--tablet-body);
+    }
+    .error-text {
+        font-size: var(--tablet-body);
+    }
+    h1 {
+        font-size: var(--tablet-title);
+    }
+    h2 {
+        font-size: var(--tablet-body)
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .contact {
+        width: 50rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .contact {
+        width: 100vw;
+        border-radius: 0;
+    }
 }

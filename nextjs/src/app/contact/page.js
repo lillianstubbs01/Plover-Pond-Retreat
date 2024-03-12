@@ -103,9 +103,9 @@ function Contact() {
                         <textarea value={message} onChange={(e) => {setMessage(e.target.value)}}></textarea>
                         <p className={messageErrorClass}>{emptyError}</p>
                     </div>
-                    <div>
-                        <button onClick={() => handleClear()}>Clear</button>
-                        <button onClick={() => handleSubmit()}>Submit</button>
+                    <div className="btn-row">
+                        <button className="clear-btn" onClick={() => handleClear()}>Clear</button>
+                        <button className="submit-btn" onClick={() => handleSubmit()}>Submit</button>
                     </div>
                 </div>
             </div>
