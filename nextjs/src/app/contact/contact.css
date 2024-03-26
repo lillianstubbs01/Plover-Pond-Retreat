@@ -1,6 +1,5 @@
 .contact-page {
     width: 100vw;
-    height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -11,6 +10,7 @@
 .contact {
     width: 62rem;
     height: 93vh;
+    min-height: 800px;
     background-color: var(--beige);
     border-radius: 12.5rem 12.5rem 0 0;
 
@@ -26,6 +26,7 @@ h1 {
     font-size: var(--subtitle);
     font-weight: var(--semibold);
     letter-spacing: 0.39rem;
+    text-align: center;
 }
 
 p {
@@ -62,9 +63,8 @@ span {
 }
 
 .contact-card {
-    width: 60%;
-    height: 70%;
-    min-height: 450px;
+    width: 37rem;
+    height: 40rem;
     background-color: white;
 
     display: flex;
@@ -152,37 +152,93 @@ textarea:focus {
     gap: 2rem;
 }
 
-@media screen and (max-height: 950px) {
+/*@media screen and (max-height: 950px) {*/
 
-    input {
-        height: 2.5rem;
+/*    input {*/
+/*        height: 2.5rem;*/
+/*    }*/
+/*    textarea {*/
+/*        height: 3rem;*/
+/*    }*/
+/*    p {*/
+/*        font-size: var(--tablet-body);*/
+/*    }*/
+/*    .error-text {*/
+/*        font-size: var(--tablet-body);*/
+/*    }*/
+/*    h1 {*/
+/*        font-size: var(--tablet-title);*/
+/*    }*/
+/*    h2 {*/
+/*        font-size: var(--tablet-body)*/
+/*    }*/
+/*}*/
+
+/*@media screen and (max-width: 1100px) {*/
+/*    .contact {*/
+/*        width: 50rem;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (max-width: 850px) {*/
+/*    .contact {*/
+/*        width: 100vw;*/
+/*        border-radius: 0;*/
+/*    }*/
+/*}*/
+
+/*tablet sizes*/
+@media screen and (max-width: 1024px) {
+    .contact {
+        width: 52rem;
     }
-    textarea {
-        height: 3rem;
-    }
-    p {
-        font-size: var(--tablet-body);
-    }
-    .error-text {
-        font-size: var(--tablet-body);
-    }
+}
+
+/*mobile sizes*/
+@media screen and (max-width: 480px) {
     h1 {
-        font-size: var(--tablet-title);
+        font-size: var(--mobile-title);
+        padding-top: 1rem;
+        margin: 0.5rem;
     }
     h2 {
-        font-size: var(--tablet-body)
+        font-size: var(--mobile-body);
+    }
+    p {
+        font-size: var(--mobile-body);
+    }
+    .contact {
+        width: 90vw;
+        min-width: 280px;
+        min-height: 400px;
+        border-radius: 6.25rem 6.25rem 0 0;
+    }
+    .contact-card {
+        width: 80vw;
+        min-width: 280px;
+        min-height: 400px;
+        max-height: 500px;
+    }
+    input {
+        width: 1fr;
+        min-width: 250px;
+        height: 1.5rem;
+    }
+    textarea {
+        padding: 0.2rem;
+        width: 1fr;
+        min-width: 250px;
+        height: 2rem;
+    }
+    .clear-btn {
+        font-size: var(--mobile-body);
+    }
+    .submit-btn {
+        font-size: var(--mobile-body);
+    }
+    .contact-text {
+        width: 80vw;
+        min-width: 280px;
     }
 }
 
-@media screen and (max-width: 1100px) {
-    .contact {
-        width: 50rem;
-    }
-}
-
-@media screen and (max-width: 850px) {
-    .contact {
-        width: 100vw;
-        border-radius: 0;
-    }
-}

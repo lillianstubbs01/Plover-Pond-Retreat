@@ -38,6 +38,10 @@
   --tablet-title-two: 2rem;
   --tablet-body: 1rem;
   --tablet-button: 1.5rem;
+
+  --mobile-title: 1.8rem;
+  --mobile-subtitle: 1.3rem;
+  --mobile-body: 1rem;
 }
 
 body {
