@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import NavBar from "../components/navbar/navbar";
+import { WarningRegular } from '@fluentui/react-icons';
 
 import "./contact.css";
 
@@ -48,6 +49,12 @@ function Contact() {
             setNameErrorClass("error-text");
             errors = true;
         }
+        if (checkValidEmail()) {
+            setEmailClass("contact-grouping error");
+            setEmailErrorClass("error-text");
+            setEmailError(invalidError);
+            errors = true
+        }
         if (email === "") {
             setEmailClass("contact-grouping error");
             setEmailErrorClass("error-text");
@@ -59,12 +66,6 @@ function Contact() {
             setMessageErrorClass("error-text");
             errors = true;
         }
-        if (checkValidEmail()) {
-            setEmailClass("contact-grouping error");
-            setEmailErrorClass("error-text");
-            setEmailError(invalidError);
-            errors = true
-        }
         return errors
     }
 
@@ -75,8 +76,8 @@ function Contact() {
     }
 
     function checkValidEmail() {
-        // insert email validation or regex
-        return false
+        let match = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$');
+        return !match.test(email)
     }
 
     return (
@@ -91,17 +92,17 @@ function Contact() {
                     <div className={nameClass}>
                         <h2>Name<span>*</span></h2>
                         <input type="text" value={name} onChange={(e) => {setName(e.target.value)}}></input>
-                        <p className={nameErrorClass}>{emptyError}</p>
+                        <p className={nameErrorClass}><WarningRegular/>{emptyError}</p>
                     </div>
                     <div className={emailClass}>
                         <h2>Email<span>*</span></h2>
                         <input type="text" value={email} onChange={(e) => {setEmail(e.target.value)}}></input>
-                        <p className={emailErrorClass}>{emailError}</p>
+                        <p className={emailErrorClass}><WarningRegular/>{emailError}</p>
                     </div>
                     <div className={messageClass}>
                         <h2>Message<span>*</span></h2>
                         <textarea value={message} onChange={(e) => {setMessage(e.target.value)}}></textarea>
-                        <p className={messageErrorClass}>{emptyError}</p>
+                        <p className={messageErrorClass}><WarningRegular/>{emptyError}</p>
                     </div>
                     <div className="btn-row">
                         <button className="clear-btn" onClick={() => handleClear()}>Clear</button>
