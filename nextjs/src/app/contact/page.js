@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import NavBar from "../components/navbar/navbar";
+import BrownBg from "../components/brown-bg/brown-bg";
 import { WarningRegular } from '@fluentui/react-icons';
 
 import "./contact.css";
@@ -83,33 +84,34 @@ function Contact() {
     return (
         <div className="contact-page">
             <NavBar/>
-            <div className="contact">
-                <h1>We&apos;re Happy To Help</h1>
-                <p className="contact-text">Fill out the contact sheet and we will follow up to answer any of your questions.
-                    It is our goal to give you your best stay possible.
-                </p>
-                <div className="contact-card">
-                    <div className={nameClass}>
-                        <h2>Name<span>*</span></h2>
-                        <input type="text" value={name} onChange={(e) => {setName(e.target.value)}}></input>
-                        <p className={nameErrorClass}><WarningRegular/>{emptyError}</p>
+            <BrownBg
+                header={"We're Happy To Help"}
+                message="Fill out the contact sheet and we will follow up to answer any of your questions.
+                It is our goal to give you your best stay possible."
+                content={
+                    <div className="contact-card">
+                        <div className={nameClass}>
+                            <h2>Name<span>*</span></h2>
+                            <input type="text" value={name} onChange={(e) => {setName(e.target.value)}}></input>
+                              <p className={nameErrorClass}><WarningRegular/>{emptyError}</p>
+                        </div>
+                        <div className={emailClass}>
+                            <h2>Email<span>*</span></h2>
+                            <input type="text" value={email} onChange={(e) => {setEmail(e.target.value)}}></input>
+                            <p className={emailErrorClass}><WarningRegular/>{emailError}</p>
+                        </div>
+                        <div className={messageClass}>
+                            <h2>Message<span>*</span></h2>
+                            <textarea value={message} onChange={(e) => {setMessage(e.target.value)}}></textarea>
+                            <p className={messageErrorClass}><WarningRegular/>{emptyError}</p>
+                        </div>
+                        <div className="btn-row">
+                            <button className="clear-btn" onClick={() => handleClear()}>Clear</button>
+                            <button className="submit-btn" onClick={() => handleSubmit()}>Submit</button>
+                        </div>
                     </div>
-                    <div className={emailClass}>
-                        <h2>Email<span>*</span></h2>
-                        <input type="text" value={email} onChange={(e) => {setEmail(e.target.value)}}></input>
-                        <p className={emailErrorClass}><WarningRegular/>{emailError}</p>
-                    </div>
-                    <div className={messageClass}>
-                        <h2>Message<span>*</span></h2>
-                        <textarea value={message} onChange={(e) => {setMessage(e.target.value)}}></textarea>
-                        <p className={messageErrorClass}><WarningRegular/>{emptyError}</p>
-                    </div>
-                    <div className="btn-row">
-                        <button className="clear-btn" onClick={() => handleClear()}>Clear</button>
-                        <button className="submit-btn" onClick={() => handleSubmit()}>Submit</button>
-                    </div>
-                </div>
-            </div>
+                }
+            />
         </div>
     );
 }

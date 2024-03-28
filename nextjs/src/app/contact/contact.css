@@ -174,13 +174,17 @@ textarea:focus {
         font-size: var(--tablet-title);
     }
     h2 {
-        font-size: var(--tablet-body)
+        font-size: var(--tablet-body);
+    }
+    p {
+        font-size: var(--tablet-body);
     }
     .contact {
         min-height: 550px;
     }
     .contact-card {
-        max-height: 550px;
+        padding: 1rem 0 1rem 0;
+        width: 30rem;
     }
 }
 

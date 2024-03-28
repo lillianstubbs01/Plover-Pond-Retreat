@@ -1,0 +1,51 @@
+.photo-gallery-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: var(--brown);
+    font-family: var(--font);
+    font-size: var(--subtitle);
+    font-weight: var(--semibold);
+    letter-spacing: 0.39rem;
+    text-align: center;
+}
+
+.photo-tiles {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.photo-view {
+    background-color: rgba(38, 24, 19, 0.95);
+    position: fixed;
+    top: 7vh;
+    width: 100vw;
+    height: 93vh;
+    z-index: 5;
+}
+
+.hidden {
+    display: none;
+}
+
+/* laptop&landscape sizes */
+@media screen and (max-height: 800px) and (min-width: 1000px) {
+    h1 {
+        font-size: var(--tablet-title);
+    }
+}
+
+/*mobile sizes*/
+@media screen and (max-width: 540px) {
+    h1 {
+        font-size: var(--mobile-title);
+        padding-top: 1rem;
+        margin: 0.5rem;
+    }
+}
