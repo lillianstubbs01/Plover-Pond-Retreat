@@ -2,7 +2,7 @@
 
 :root {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   padding: 0;
   margin: 0;
 
@@ -33,6 +33,12 @@
   --header-two: 3rem;
   --input: 20px;
 
+  --laptop-title: 3rem;
+  --laptop-subtitle: 2rem;
+  --laptop-title-two: 2rem;
+  --laptop-body: 1.1rem;
+  --laptop-button: 1.5rem;
+
   --tablet-title: 3rem;
   --tablet-subtitle: 2rem;
   --tablet-title-two: 2rem;
@@ -49,4 +55,67 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
+}
+
+h1 {
+  color: var(--brown);
+  font-family: var(--font);
+  font-size: var(--subtitle);
+  font-weight: var(--semibold);
+  letter-spacing: 0.39rem;
+}
+
+p {
+  color: var(--brown);
+  font-family: var(--font);
+  font-size: var(--body);
+  font-weight: var(--regular);
+}
+
+h2 {
+  color: var(--brown);
+  font-family: var(--font);
+  font-size: var(--body);
+  font-weight: var(--weight-black);
+}
+
+/*laptop&landscape sizes*/
+@media screen and (max-height: 800px) and (min-width: 1000px) {
+  h1 {
+    font-size: var(--laptop-title);
+  }
+  h2 {
+    font-size: var(--laptop-body);
+  }
+  p {
+    font-size: var(--laptop-body);
+  }
+}
+
+/*tablet sizes*/
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: var(--tablet-title);
+  }
+  h2 {
+    font-size: var(--tablet-body);
+  }
+  p {
+    font-size: var(--tablet-body);
+  }
+}
+
+/*mobile sizes*/
+@media screen and (max-width: 540px) {
+  h1 {
+    font-size: var(--mobile-title);
+  }
+
+  h2 {
+    font-size: var(--mobile-body);
+  }
+
+  p {
+    font-size: var(--mobile-body);
+  }
 }

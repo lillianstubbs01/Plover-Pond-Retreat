@@ -1,5 +1,5 @@
 .contact-page {
-    width: 100vw;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -20,31 +20,12 @@
     align-items: center;
 }
 
-h1 {
-    color: var(--brown);
-    font-family: var(--font);
-    font-size: var(--subtitle);
-    font-weight: var(--semibold);
-    letter-spacing: 0.39rem;
-    text-align: center;
-}
-
-p {
-    color: var(--brown);
-    font-family: var(--font);
-    font-size: var(--body);
-    font-weight: var(--regular);
+span {
+    color: var(--burnt-umber);
 }
 
 h2 {
-    color: var(--brown);
-    font-family: var(--font);
-    font-size: var(--body);
-    font-weight: var(--weight-black);
-}
-
-span {
-    color: var(--burnt-umber);
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 .contact-text {
@@ -170,15 +151,6 @@ textarea:focus {
     .error-text {
         font-size: var(--tablet-body);
     }
-    h1 {
-        font-size: var(--tablet-title);
-    }
-    h2 {
-        font-size: var(--tablet-body);
-    }
-    p {
-        font-size: var(--tablet-body);
-    }
     .contact {
         min-height: 550px;
     }
@@ -202,17 +174,6 @@ textarea:focus {
 
 /*mobile sizes*/
 @media screen and (max-width: 540px) {
-    h1 {
-        font-size: var(--mobile-title);
-        padding-top: 1rem;
-        margin: 0.5rem;
-    }
-    h2 {
-        font-size: var(--mobile-body);
-    }
-    p {
-        font-size: var(--mobile-body);
-    }
     .contact {
         width: 90vw;
         min-width: 280px;

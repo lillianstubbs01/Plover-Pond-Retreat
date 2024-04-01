@@ -11,32 +11,17 @@
     align-items: center;
 }
 
-h1 {
-    color: var(--brown);
-    font-family: var(--font);
-    font-size: var(--subtitle);
-    font-weight: var(--semibold);
-    letter-spacing: 0.39rem;
+.brown-bg-title {
     text-align: center;
 }
 
-p {
-    color: var(--brown);
-    font-family: var(--font);
-    font-size: var(--body);
-    font-weight: var(--regular);
+.brown-bg-message {
     width: 75%;
     text-align: center;
 }
 
 /* laptop&landscape sizes */
 @media screen and (max-height: 800px) and (min-width: 1000px) {
-    h1 {
-        font-size: var(--tablet-title);
-    }
-    p {
-        font-size: var(--tablet-body);
-    }
     .brown-bg {
         min-height: 550px;
     }
@@ -52,18 +37,14 @@ p {
 
 /*mobile sizes*/
 @media screen and (max-width: 540px) {
-    h1 {
-        font-size: var(--mobile-title);
+    .brown-bg-title {
         padding-top: 1rem;
         margin: 0.5rem;
     }
-    p {
-        font-size: var(--mobile-body);
-    }
     .brown-bg {
-        width: 90vw;
+        width: 90%;
         min-width: 280px;
-        min-height: 400px;
+        min-height: 600px;
         border-radius: 6.25rem 6.25rem 0 0;
     }
 }

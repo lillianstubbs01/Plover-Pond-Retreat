@@ -5,6 +5,12 @@ async function ApiHandler(props) {
         'Authorization': '',
         'User-Agent': ''
     };
+    const url = https://ovcvopqegd.execute-api.us-east-1.amazonaws.com/prod/emailservice;
+    const messageBody = {
+        "name": "",
+        "email": "",
+        "message": ""
+    }
 
     if (props.request === 'post') {
         return await Post(props.args,

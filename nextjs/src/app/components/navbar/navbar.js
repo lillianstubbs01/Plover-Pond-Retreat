@@ -6,6 +6,7 @@ import { LineHorizontal3Filled, DismissFilled } from '@fluentui/react-icons';
 import './navbar.css'
 
 const links = [
+    {'href': '/', 'name': 'Home'},
     {'href': '/details', 'name': 'Details'},
     {'href': '/availabilities', 'name': 'Availabilities'},
     {'href': '/photo-gallery', 'name': 'Photo Gallery'},
@@ -20,11 +21,11 @@ function NavBar() {
     } 
 
     return (
-        <div className='navbar' onMouseLeave={() => {handleNavChange(false)}}>
+        <div className='navbar'onMouseLeave={() => {handleNavChange(false)}}>
             <div className='mobile-link-btn' onClick={() => {handleNavChange(!navOpen)}}>
                 { !navOpen ?
                     <LineHorizontal3Filled fontSize={30} color='white'></LineHorizontal3Filled> :
-                    <DismissFilled fontSize={30} color='white'></DismissFilled>
+                    <div style={{'display': 'none'}} />
                 }
             </div>
             {navOpen ?

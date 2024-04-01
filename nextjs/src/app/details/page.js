@@ -15,24 +15,24 @@ function Details() {
     // Constants for Property Details Card
     const propertyDetailsList = <div className="property-details-list smaller-content">
         <div className="icon-row">
-            <HomeRegular fontSize={40} style={{"color": "8C310F"}}/>
+            <HomeRegular className='details-icon'/>
             <p>Single Family Home</p>
         </div>
         <div className="icon-row">
-            <BedRegular fontSize={40} style={{"color": "8C310F"}}/>
+            <BedRegular className='details-icon'/>
             <p>3 Bedroom, 2 Bathroom</p>
         </div>
         <div className="icon-row">
-            <VehicleCarRegular fontSize={40} style={{"color": "8C310F"}}/>
+            <VehicleCarRegular className='details-icon'/>
             <p>8 Parking Spaces</p>
         </div>
         <div className="icon-row">
-            <OvenRegular fontSize={40} style={{"color": "8C310F"}}/>
-            <p>Dishwasher, Double Oven, Gas Water Heater</p>
+            <CalendarRegular className='details-icon'/>
+            <p>Built in 2012</p>
         </div>
         <div className="icon-row">
-            <CalendarRegular fontSize={40} style={{"color": "8C310F"}}/>
-            <p>Built in 2012</p>
+            <OvenRegular className='details-icon'/>
+            <p>Dishwasher, Double Oven</p>
         </div>
     </div>;
     const propertyDetailsDescription = <div className='details-text larger-content'>
@@ -62,12 +62,10 @@ function Details() {
 
 
     // Constants for Floor Plan Card
-    const floorPlan = <div className='larger-content'>
-        <Image src={birdsEyeSrc}
+    const floorPlan = <div className='details-image-container'>
+        <Image className='details-image'
+               src={birdsEyeSrc}
                alt="The Image Plover Pond Retreat's large exterior with the affiliated farm land"
-               sizes="100vw"
-               fill={true}
-               object-fit='contain'
         />
     </div>;
     const floorPlanDescription = <div className='details-text smaller-content'>
@@ -78,36 +76,34 @@ function Details() {
 
 
     // Constants for Jump Start Your Vacation Card
-    const redirectButtons = <div className='smaller-content details-text'>
+    const redirectButtons = <div className='smaller-content'>
         <p>To see our pricing check our availabilities. </p>
         <Link href='/availabilities' className='link-decoration'>
             <div className='icon-row arrow-btn'>
-                <div>See Availabilities</div>
+                <div className='icon-text'>See Availabilities</div>
                 <ArrowRightRegular fontSize={30} style={{"color": "#261813"}}/>
             </div>
         </Link>
         <p>For more pictures of house try our photo gallery</p>
         <Link href='/photo-gallery' className='link-decoration'>
             <div className='icon-row arrow-btn'>
-                <div>Go To Photo Gallery</div>
+                <div className='icon-text'>Go To Photo Gallery</div>
                 <ArrowRightRegular fontSize={30} style={{"color": "#261813"}}/>
             </div>
         </Link>
         <p>Have more questions? Get in touch with us. We are always happy to help.</p>
         <Link href='/contact' className='link-decoration'>
             <div className='icon-row arrow-btn'>
-                <div>Contact Now</div>
+                <div className='icon-text'>Contact Now</div>
                 <ArrowRightRegular fontSize={30} style={{"color": "#261813"}}/>
             </div>
         </Link>
     </div>;
-    const vacationPhoto = <div className='larger-content'>
-        <Image src={walkWayWebpSrc}
+    const vacationPhoto = <div className='details-image-container'>
+        <Image className='details-image'
+               src={walkWayWebpSrc}
                alt="A view of the home from the drive up to the house. You can see the fence leading up to the house,
            the detached garage, and the pond with a fountain bursting out."
-               sizes="100vw"
-               fill={true}
-               object-fit='contain'
         />
     </div>;
 

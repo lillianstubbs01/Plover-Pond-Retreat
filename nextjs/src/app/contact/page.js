@@ -93,7 +93,7 @@ function Contact() {
                         <div className={nameClass}>
                             <h2>Name<span>*</span></h2>
                             <input type="text" value={name} onChange={(e) => {setName(e.target.value)}}></input>
-                              <p className={nameErrorClass}><WarningRegular/>{emptyError}</p>
+                            <p className={nameErrorClass}><WarningRegular/>{emptyError}</p>
                         </div>
                         <div className={emailClass}>
                             <h2>Email<span>*</span></h2>

@@ -5,12 +5,7 @@
     align-items: center;
 }
 
-h1 {
-    color: var(--brown);
-    font-family: var(--font);
-    font-size: var(--subtitle);
-    font-weight: var(--semibold);
-    letter-spacing: 0.39rem;
+.photo-gallery-title {
     text-align: center;
 }
 
@@ -84,17 +79,9 @@ h1 {
     object-fit: contain;
 }
 
-/* laptop&landscape sizes */
-@media screen and (max-height: 800px) and (min-width: 1000px) {
-    h1 {
-        font-size: var(--tablet-title);
-    }
-}
-
 /*mobile sizes*/
 @media screen and (max-width: 540px) {
-    h1 {
-        font-size: var(--mobile-title);
+    .photo-gallery-title {
         padding-top: 1rem;
         margin: 0.5rem;
     }

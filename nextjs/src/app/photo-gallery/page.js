@@ -70,7 +70,7 @@ function PhotoGallery() {
     return (
         <div className='photo-gallery-page'>
             <NavBar/>
-            <h1>Photo Gallery</h1>
+            <h1 className='photo-gallery-title'>Photo Gallery</h1>
             <div className='photo-tiles'>
                 {allPhotos.map((photo) => {
                     return <PhotoTile

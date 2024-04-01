@@ -20,7 +20,7 @@ function PhotoTile(props) {
         replace(`${path}?${params}`);
     }
 
-    return <button className='image' disabled={props.view} tabIndex={props.view ? -1 : 0} onClick={(e) => {
+    return <button className='image' disabled={props.view} tabIndex={props.view ? -1 : 0} onClick={() => {
         props.setOpenView(true);
         handleParams(props.photoNumber);
         props.setOpenImage(props.photoNumber);
