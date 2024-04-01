@@ -7,11 +7,16 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    border: none;
 }
 
 .image:hover {
     opacity: 0.5;
     cursor: pointer;
+}
+
+.image-raw {
+    height: 20vw;
 }
 
 /*mobile sizes*/
@@ -21,5 +26,9 @@
         min-width: 200px;
         height: 60vw;
         min-height: 200px;
+    }
+
+    .image-raw {
+        height: 60vw;
     }
 }

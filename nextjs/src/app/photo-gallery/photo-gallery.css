@@ -28,10 +28,60 @@ h1 {
     width: 100vw;
     height: 93vh;
     z-index: 5;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .hidden {
     display: none;
+}
+
+.photo-button {
+    position: absolute;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-icon {
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.close {
+    top: 7vh;
+    right: 7vw;
+}
+
+.arrow-left {
+    top: 45vh;
+    left: 3rem;
+}
+
+.arrow-right {
+    top: 45vh;
+    right: 3rem;
+}
+
+.counter {
+    color: white;
+    font-family: var(--font);
+    font-size: var(--body);
+
+    position: absolute;
+    bottom: 1rem;
+}
+
+.open-image {
+    max-height: 550px;
+    max-width: 1500px;
+    object-fit: contain;
 }
 
 /* laptop&landscape sizes */
@@ -47,5 +97,26 @@ h1 {
         font-size: var(--mobile-title);
         padding-top: 1rem;
         margin: 0.5rem;
+    }
+
+    .open-image {
+        max-width: 280px;
+        max-height: 500px;
+    }
+
+    .photo-icon {
+        font-size: var(--mobile-title);
+    }
+
+    .arrow-left {
+        left: 0.5rem;
+    }
+
+    .arrow-right {
+        right: 0.5rem;
+    }
+
+    .counter {
+        bottom: 5rem;
     }
 }
