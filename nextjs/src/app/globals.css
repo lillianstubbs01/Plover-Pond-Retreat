@@ -79,6 +79,17 @@ h2 {
   font-weight: var(--weight-black);
 }
 
+/*loading animation*/
+.loading {
+  font-size: 40px;
+  animation: rotate 2s infinite;
+}
+
+@keyframes rotate {
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+
 /*laptop&landscape sizes*/
 @media screen and (max-height: 800px) and (min-width: 1000px) {
   h1 {

@@ -85,7 +85,7 @@ function PhotoGallery() {
                     />
                 })}
             </div>
-            <div className={openView ? 'photo-view' : 'hidden'}>
+            <div className={openView ? 'photo-view' : 'photo-hidden'}>
                 <button className="close photo-button" onClick={() => handleClose()}>
                     <DismissRegular className="photo-icon"/>
                 </button>

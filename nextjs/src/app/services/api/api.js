@@ -1,46 +1,48 @@
-async function ApiHandler(props) {
+const url = "https://ovcvopqegd.execute-api.us-east-1.amazonaws.com/prod/"
+
+export const apiHandler = async (request, args, headers, content) => {
     const defaultHeaders = {
         'Content-Type': '',
         'Accept': '',
         'Authorization': '',
         'User-Agent': ''
     };
-    const url = https://ovcvopqegd.execute-api.us-east-1.amazonaws.com/prod/emailservice;
-    const messageBody = {
-        "name": "",
-        "email": "",
-        "message": ""
+
+    if (request === 'post') {
+        return await Post(args,
+            headers ? headers : defaultHeaders,
+            content);
     }
 
-    if (props.request === 'post') {
-        return await Post(props.args,
-            props.headers ? props.headers : defaultHeaders,
-            props.content);
-    }
-
-    else if (props.request ==='get') {
-        return await Get(props.args,
-            props.headers ? props.headers : defaultHeaders);
+    else if (request ==='get') {
+        return await Get(args,
+            headers ? headers : defaultHeaders);
     }
 }
 
 async function Post(args, headers, content) {
-    const response = await fetch('apiurl/' + args, {
-        headers: headers,
-        method: 'POST',
-        body: JSON.stringify(content)
-    }).then((res) => {
-        return res.json();
-    });
+    try {
+        const response = await fetch(url + args, {
+            headers: headers,
+            method: 'POST',
+            body: JSON.stringify(content)
+        }).then((res) => {
+            console.log('api post status', res.status);
+            return res.status;
+        });
+    } catch (e) {
+        console.log('error in post', e);
+        return null;
+    }
 }
 
-async function Get(args, headers) {
-    const response = await fetch('apiurl/' + args, {
-        headers: headers,
-        method: 'GET',
-    }).then((res) => {
-        return res.json();
-    });
-}
+// async function Get(args, headers) {
+//     const response = await fetch(url + args, {
+//         headers: headers,
+//         method: 'GET',
+//     }).then((res) => {
+//         return res.json();
+//     });
+// }
 
-export default ApiHandler
+export default apiHandler()

@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from "../components/navbar/navbar";
 import BrownBg from "../components/brown-bg/brown-bg";
-import { WarningRegular } from '@fluentui/react-icons';
+import { WarningRegular, ArrowClockwiseRegular } from '@fluentui/react-icons';
+import { messagingService } from '../services/Messaging/messaging';
 
 import "./contact.css";
 
@@ -18,27 +19,54 @@ function Contact() {
     const [nameClass, setNameClass] = useState("contact-grouping");
     const [emailClass, setEmailClass] = useState("contact-grouping");
     const [messageClass, setMessageClass] = useState("contact-grouping");
-    const [nameErrorClass, setNameErrorClass] = useState("hidden");
-    const [emailErrorClass, setEmailErrorClass] = useState("hidden");
-    const [messageErrorClass, setMessageErrorClass] = useState("hidden");
+    const [nameErrorClass, setNameErrorClass] = useState("contact-hidden");
+    const [emailErrorClass, setEmailErrorClass] = useState("contact-hidden");
+    const [messageErrorClass, setMessageErrorClass] = useState("contact-hidden");
 
     //errors
     const emptyError = "This field is required."
     const invalidError = "This is an invalid entry."
     const [emailError, setEmailError] = useState(emptyError);
 
+    //loading
+    const [isLoading, setIsLoading] = useState(false);
+    const [submitError, setSubmitError] = useState(false);
+
+    useEffect(() => {
+        if (isLoading) {
+            messagingService(name, email, message).then((res) => {
+                console.log('contact page res', res);
+                if (res === null) {
+                    setSubmitError(true);
+                    console.log('res is null');
+                } else {
+                    handleClear();
+                }
+            })
+        }
+    }, [isLoading]);
+
+    useEffect(() => {
+        console.log('detected submit error');
+        setIsLoading(false);
+    }, [submitError]);
+
     function handleClear() {
         setName("");
         setEmail("");
         setMessage("");
         clearErrorMessages();
+        setIsLoading(false);
+        setSubmitError(false);
     }
 
     function handleSubmit() {
         clearErrorMessages();
+        setSubmitError(false);
         if (!inputErrors()) {
             // insert message submission and handling
-            handleClear();
+
+            setIsLoading(true);
         }
     }
 
@@ -71,9 +99,9 @@ function Contact() {
     }
 
     function clearErrorMessages() {
-        setNameErrorClass("hidden");
-        setEmailErrorClass("hidden");
-        setMessageErrorClass("hidden");
+        setNameErrorClass("contact-hidden");
+        setEmailErrorClass("contact-hidden");
+        setMessageErrorClass("contact-hidden");
     }
 
     function checkValidEmail() {
@@ -105,10 +133,21 @@ function Contact() {
                             <textarea value={message} onChange={(e) => {setMessage(e.target.value)}}></textarea>
                             <p className={messageErrorClass}><WarningRegular/>{emptyError}</p>
                         </div>
-                        <div className="btn-row">
-                            <button className="clear-btn" onClick={() => handleClear()}>Clear</button>
-                            <button className="submit-btn" onClick={() => handleSubmit()}>Submit</button>
-                        </div>
+                        { submitError ?
+                            <div className='error'>
+                                <p className='error-text' style={{'margin': '0.5rem'}}><WarningRegular />An error has occured. Please try again later.</p>
+                            </div>
+                            :
+                            <span style={{'display': 'none'}}/>
+                        }
+                        { isLoading ?
+                            <ArrowClockwiseRegular className="loading"/>
+                            :
+                            <div className="btn-row">
+                                <button className="clear-btn" onClick={() => handleClear()}>Clear</button>
+                                <button className="submit-btn" onClick={() => handleSubmit()}>Submit</button>
+                            </div>
+                        }
                     </div>
                 }
             />
