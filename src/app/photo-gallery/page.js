@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, Suspense } from 'react';
 import { DismissRegular, ArrowRightRegular, ArrowLeftRegular } from '@fluentui/react-icons';
-import { usePathname, useSearchParams, useRouter } from 'next/navigation';
+import { usePathname, useSearchParams, useRouter } from 'next/navigation.js';
 import Image from 'next/image';
 import NavBar from '../components/navbar/navbar';
 import PhotoTile from '../components/photo-tile/photo-tile';

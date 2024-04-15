@@ -3,8 +3,8 @@
 import React, { useState} from 'react';
 import NavBar from '../components/navbar/navbar';
 import DetailsCard from '../components/details-card/details-card';
-import Link from 'next/Link';
-import Image from 'next/Image';
+import Link from 'next/Link.js';
+import Image from 'next/Image.js';
 import { HomeRegular, BedRegular, VehicleCarRegular, OvenRegular, CalendarRegular, ArrowRightRegular } from '@fluentui/react-icons';
 import walkWayWebpSrc from '../assets/fence_walk_way.webp';
 import birdsEyeSrc from '../assets/birds_eye.webp';

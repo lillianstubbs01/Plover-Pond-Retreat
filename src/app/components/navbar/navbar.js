@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link';
+import Link from 'next/link.js';
 import { useState } from 'react';
 import { LineHorizontal3Filled, DismissFilled } from '@fluentui/react-icons';
 import './navbar.css'

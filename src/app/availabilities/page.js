@@ -4,7 +4,6 @@ import React from 'react';
 import Navbar from "../components/navbar/navbar";
 import AirbnbCard from "../components/airbnb-card/airbnb-card";
 import BrownBg from "../components/brown-bg/brown-bg";
-import Script from 'next/script';
 
 import './availabilities.css'
 
