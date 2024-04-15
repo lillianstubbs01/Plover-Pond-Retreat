@@ -5,7 +5,8 @@ export const apiHandler = async (request, args, headers, content) => {
         'Content-Type': '',
         'Accept': '',
         'Authorization': '',
-        'User-Agent': ''
+        'User-Agent': '',
+        'Access-Control-Allow-Origin': 'https://lillianstubbs01.github.io'
     };
 
     if (request === 'post') {
@@ -21,7 +22,6 @@ export const apiHandler = async (request, args, headers, content) => {
 }
 
 async function Post(args, headers, content) {
-    try {
         const response = await fetch(url + args, {
             headers: headers,
             method: 'POST',
@@ -29,11 +29,10 @@ async function Post(args, headers, content) {
         }).then((res) => {
             console.log('api post status', res.status);
             return res.status;
-        });
-    } catch (e) {
+        }).catch((e) => {
         console.log('error in post', e);
         return null;
-    }
+        });
 }
 
 // async function Get(args, headers) {
