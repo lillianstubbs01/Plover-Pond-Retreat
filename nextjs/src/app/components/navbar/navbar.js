@@ -6,10 +6,10 @@ import { LineHorizontal3Filled, DismissFilled } from '@fluentui/react-icons';
 import './navbar.css'
 
 const links = [
-    {'href': '/', 'name': 'Home'},
-    {'href': '/details', 'name': 'Details'},
-    {'href': '/availabilities', 'name': 'Availabilities'},
-    {'href': '/photo-gallery', 'name': 'Photo Gallery'},
+    {'key': 0, 'href': '/', 'name': 'Home'},
+    {'key': 1, 'href': '/details', 'name': 'Details'},
+    {'key': 2, 'href': '/availabilities', 'name': 'Availabilities'},
+    {'key': 3, 'href': '/photo-gallery', 'name': 'Photo Gallery'},
 ]
 
 function NavBar() {
@@ -33,7 +33,7 @@ function NavBar() {
                     <div className='mobile-nav-link dismiss'>
                         <DismissFilled fontSize={30} color='white' onClick={() => {handleNavChange(false)}}></DismissFilled>
                     </div>
-                    {links.map((link) => (<Link href={link.href} className='mobile-nav-link'>
+                    {links.map((link) => (<Link key={link.key} href={link.href} className='mobile-nav-link'>
                         {link.name}
                     </Link>))}
                     <Link className='mobile-nav-link' href='/contact'>Contact</Link>
@@ -41,7 +41,7 @@ function NavBar() {
                 <div style={{'display': 'none'}} />
             }
             <div className='link-container'>
-                {links.map((link) => (<Link href={link.href} className='nav-link'>
+                {links.map((link) => (<Link key={link.key} href={link.href} className='nav-link'>
                     {link.name}
                 </Link>))}
             </div>

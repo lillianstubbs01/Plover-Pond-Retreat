@@ -44,10 +44,9 @@ function Contact() {
                 }
             })
         }
-    }, [isLoading]);
+    }, [isLoading, name, message, email, handleClear]);
 
     useEffect(() => {
-        console.log('detected submit error');
         setIsLoading(false);
     }, [submitError]);
 
@@ -57,12 +56,10 @@ function Contact() {
         setMessage("");
         clearErrorMessages();
         setIsLoading(false);
-        setSubmitError(false);
     }
 
     function handleSubmit() {
         clearErrorMessages();
-        setSubmitError(false);
         if (!inputErrors()) {
             // insert message submission and handling
 
@@ -102,6 +99,7 @@ function Contact() {
         setNameErrorClass("contact-hidden");
         setEmailErrorClass("contact-hidden");
         setMessageErrorClass("contact-hidden");
+        setSubmitError(false);
     }
 
     function checkValidEmail() {

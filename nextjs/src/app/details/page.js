@@ -20,7 +20,7 @@ function Details() {
         </div>
         <div className="icon-row">
             <BedRegular className='details-icon'/>
-            <p>3 Bedroom, 2 Bathroom</p>
+            <p>3 Bedroom, 3 Bathroom</p>
         </div>
         <div className="icon-row">
             <VehicleCarRegular className='details-icon'/>
@@ -36,9 +36,18 @@ function Details() {
         </div>
     </div>;
     const propertyDetailsDescription = <div className='details-text larger-content'>
-        <p>Welcome to your dream home! This one-of-a-kind property offers the perfect combination of waterfront living and craftsmanship. An impressive 21.127 private acres, partially fenced, with rolling pastures and two stocked ponds with fountains make this a truly special place for you to call home. </p>
-        <p>Enjoy fishing off your back porch or deer hunting at its finest on your own land. Inside you will find top of line appliances paired with 2 huge gas burning fireplaces perfect for cozy nights at home. With vaulted ceilings this 3 bedroom 3 full bath home is sure to impress even the most discerning buyer. </p>
-        <p>Additional features include a 3 car garage plus 2 car detached garage with shop as well as an upstairs man cave above the detached garage - perfect for weekend getaways without ever leaving home! And that's not all - this property also boasts 500 feet of creek along its property line making it ideal for those who love spending time outdoors or even a mini horse farm! Live life on the water in beautiful surroundings - don't miss out on this rare opportunity - schedule a showing today!</p>
+        <p>Welcome to Plover Ponds Retreat, a charming farm house nestled in the serene countryside of Homer,
+            GA with 20 acre land and kayak access. This picturesque retreat offers rustic charm and modern comforts
+            amidst rolling green pastures and two stocked ponds. Inside, you will find a spacious family room overlooking
+            a pond with easy access to covered porch, well-appointed kitchen, and comfortable bedrooms. Escape to a
+            tranquil countryside getaway at Plover Ponds Retreat and create cherished memories.</p>
+        <p>Gas grill is connected to the main natural gas line and is located on porch. Please clean it after use.
+        </p>
+        <p>    Paddle boat, One-seat and two-seat kayaks are available for use in the big pond. You can bring your own canoes or kayaks.
+        </p>
+        <p>
+            Enjoy the TVs with Roku, pull out some board games and puzzles. Look through the bookshelves and drawers for your favorite games. Cornhole games and 3 in 1 (Air Hockey, Foosball, and Billiards) game table are available in garage.
+        </p>
     </div>
 
 
@@ -47,9 +56,9 @@ function Details() {
     const map_mode = "place";
     const map_params = "q=Homer,GA+United+States";
     const locationDescription = <div className='smaller-content details-text'>
-        <p>Location Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Duis semper gravida ex, lacinia cursus sapien feugiat ac. Pellentesque eu ligula risus. Praesent in quam erat.
-            Maecenas pharetra leo eget euismod pretium. In hac habitasse platea dictumst.</p>
+        <p>Centrally located to Lake Lanier, Helen, Athens, Chateau Elan Golf Club, and a variety of wineries, this
+            beautiful place is only 15 minutes away from the Atlanta Safari Park and Tanger Outlet Mall. Chimney
+            Oaks Golf Club is across the street and 5 mile’s away.</p>
         <p><b>Homer GA, 30547</b></p>
     </div>;
     const map = <iframe
@@ -69,8 +78,15 @@ function Details() {
         />
     </div>;
     const floorPlanDescription = <div className='details-text smaller-content'>
-        <p>Floor Plan Description:  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper gravida ex, lacinia cursus sapien feugiat ac. Pellentesque eu ligula risus. Praesent in quam erat. Maecenas pharetra leo eget euismod pretium. In hac habitasse platea dictumst.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis semper gravida ex, lacinia cursus sapien feugiat ac. Pellentesque eu ligula risus. Praesent in quam erat. Maecenas pharetra leo eget euismod pretium. In hac habitasse platea dictumst.
+        <p>The house has over 3800 square feet, 3 car garages, and plenty of parking on paved spaces. The scenery is perfect for special events or simply a relaxing time away from busy life.
+
+            The master suite has a king bed and massive bathroom. It also has private access to a sunroom. Guest bedroom has queen bed. Upstairs is equipped with one full bed, one twin bed, and a twin over full bunk bed. Two twin air mattress beds are available to setup.
+
+            All rooms are equipped with at least four pillows, two sets of towels, and additional comforters/blankets for your convenience.
+
+            The sofa set is all recliners except the middle one in the 3-seats.
+
+            The kitchen is fully stocked with pans, pots, and utensils. There is a formal dining room, bar area, living room, and a huge family room that is also a sunroom to meet your needs.
         </p>
     </div>;
 

@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { DismissRegular, ArrowRightRegular, ArrowLeftRegular } from '@fluentui/react-icons';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import NavBar from '../components/navbar/navbar';
 import PhotoTile from '../components/photo-tile/photo-tile';
+import AirbnbCard from '../components/airbnb-card/airbnb-card';
 import image1 from '../assets/birds_eye.webp';
 import image2 from '../assets/1.webp';
 import image3 from '../assets/2.webp';
@@ -199,20 +200,21 @@ const allPhotos = [
 function PhotoGallery() {
     const [openView, setOpenView] = useState(false);
     const [openImage, setOpenImage] = useState(0);
+
     const photoCount = allPhotos.length;
     let searchParams = useSearchParams();
-    const path = usePathname();
+    let path = usePathname();
     const { replace } = useRouter();
 
     useEffect(() => {
         if (searchParams.get('photoId') !== null) {
             let photoId = Number(searchParams.get('photoId'));
-            if (photoId >= 0 && photoId < allPhotos.length) {
+            if (photoId >= 0 && photoId < photoCount) {
                 setOpenImage(photoId);
                 setOpenView(true);
             }
         }
-    }, [searchParams])
+    }, [searchParams, photoCount]);
 
     function handleParams(photoId) {
         let params = new URLSearchParams(searchParams);
@@ -221,7 +223,7 @@ function PhotoGallery() {
         } else {
             params.delete('photoId');
         }
-        replace(`${path}?${params}`);
+        replace(`${path}?${params}`, {scroll: false});
     }
 
     function handleArrowRight(photoId) {
@@ -237,45 +239,46 @@ function PhotoGallery() {
     }
 
     function handleClose() {
+        replace(`${path}`, {scroll: false});
         setOpenView(false);
-        replace(`${path}`)
     }
 
     return (
-        <div className='photo-gallery-page'>
-            <NavBar/>
-            <h1 className='photo-gallery-title'>Photo Gallery</h1>
-            <div className='photo-tiles'>
-                {allPhotos.map((photo) => {
-                    return <PhotoTile
-                        key={photo.key}
-                        photoNumber={photo.key}
-                        source={photo.source}
-                        altText={photo.altText}
-                        setOpenView={setOpenView}
-                        view={openView}
-                        setOpenImage={setOpenImage}
-
+        <Suspense fallback={<p>Loading...</p>}>
+            <div className='photo-gallery-page'>
+                <NavBar/>
+                <h1 className='photo-gallery-title'>Photo Gallery</h1>
+                <div className='photo-tiles'>
+                    {allPhotos.map((photo) => {
+                        return <PhotoTile
+                            key={photo.key}
+                            photoNumber={photo.key}
+                            source={photo.source}
+                            altText={photo.altText}
+                            setOpenView={setOpenView}
+                            view={openView}
+                            setOpenImage={setOpenImage}
+                        />
+                    })}
+                </div>
+                <div className={openView ? 'photo-view' : 'photo-hidden'}>
+                    <button className="close photo-button" onClick={() => handleClose()}>
+                        <DismissRegular className="photo-icon"/>
+                    </button>
+                    <button className="photo-button arrow-left" onClick={() => handleArrowLeft(openImage)}>
+                        <ArrowLeftRegular className="photo-icon"/>
+                    </button>
+                    <Image className="open-image"
+                           src={allPhotos[openImage].source}
+                           alt={allPhotos[openImage].altText}
                     />
-                })}
+                    <button className="photo-button arrow-right" onClick={() => handleArrowRight(openImage)}>
+                        <ArrowRightRegular className="photo-icon"/>
+                    </button>
+                    <p className="counter">{openImage + 1}/{photoCount}</p>
+                </div>
             </div>
-            <div className={openView ? 'photo-view' : 'photo-hidden'}>
-                <button className="close photo-button" onClick={() => handleClose()}>
-                    <DismissRegular className="photo-icon"/>
-                </button>
-                <button className="photo-button arrow-left" onClick={() => handleArrowLeft(openImage)}>
-                    <ArrowLeftRegular className="photo-icon"/>
-                </button>
-                <Image className="open-image"
-                       src={allPhotos[openImage].source}
-                       alt={allPhotos[openImage].altText}
-                />
-                <button className="photo-button arrow-right" onClick={() => handleArrowRight(openImage)}>
-                    <ArrowRightRegular className="photo-icon"/>
-                </button>
-                <p className="counter">{openImage + 1}/{photoCount}</p>
-            </div>
-        </div>
+        </Suspense>
     );
 }
 
