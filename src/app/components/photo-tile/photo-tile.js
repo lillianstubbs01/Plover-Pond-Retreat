@@ -1,8 +1,8 @@
 'use client'
 
 import { Suspense } from 'react';
-import Image from 'next/Image';
-import { usePathname, useSearchParams, useRouter } from 'next/Navigation';
+import Image from 'next/image.js';
+import { usePathname, useSearchParams, useRouter } from 'next/navigation.js';
 
 
 import './photo-tile.css'
