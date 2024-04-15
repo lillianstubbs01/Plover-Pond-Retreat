@@ -2,7 +2,7 @@
 
 import React, { Suspense, useState, useEffect } from 'react';
 import { ArrowClockwiseRegular } from '@fluentui/react-icons';
-import Script from 'next/script.js'
+import Script from 'next/Script'
 
 import './airbnb-card.css';
 
