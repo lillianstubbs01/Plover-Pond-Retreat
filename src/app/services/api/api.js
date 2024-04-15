@@ -1,4 +1,4 @@
-const url = "https://ovcvopqegd.execute-api.us-east-1.amazonaws.com/prod/"
+const url = "https://76ivja6qn6.execute-api.us-east-1.amazonaws.com/prod/"
 
 export const apiHandler = async (request, args, headers, content) => {
     const defaultHeaders = {
