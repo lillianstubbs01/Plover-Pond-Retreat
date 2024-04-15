@@ -1,4 +1,4 @@
-import Link from 'next/Link';
+import Link from 'next/link.js';
 
 import NavBar from "../components/navbar/navbar";
 import './home.css'
